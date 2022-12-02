@@ -249,46 +249,65 @@ export default class App extends Component {
           {this.state.guitarOpen.map((e) => {
             return (
               <div className="strings">
-                {this.guitarString(e).map((string) => {
-                  if (this.state.currentchosenScale.includes(string)) {
-                    return (
-                      <div className={"fret"}>
-                        <div
-                          style={{
-                            backgroundColor:
-                              this.state.colors[
-                                this.state.currentchosenScale.indexOf(string)
-                              ],
-                            fontSize: "17px",
-                            fontWeight: "700",
-                          }}
-                          className={"positionfret " + string}
-                        >
-                          {parseInt(
-                            this.state.currentchosenScale.indexOf(string) + 1
-                          ) + string}
+                <div
+                  style={{
+                    backgroundColor:
+                      this.state.colors[
+                        this.state.currentchosenScale.indexOf(e)
+                      ],
+                    fontSize: "17px",
+                    fontWeight: "700",
+                    marginRight: "10px",
+                    marginLeft: "10px",
+                  }}
+                  className={"positionfret "}
+                >
+                  {this.state.currentchosenScale.includes(e)
+                    ? parseInt(this.state.currentchosenScale.indexOf(e) + 1) + e
+                    : e}
+                </div>
+                {this.guitarString(e)
+                  .slice(1)
+                  .map((string) => {
+                    if (this.state.currentchosenScale.includes(string)) {
+                      return (
+                        <div className={"fret"}>
+                          <div
+                            style={{
+                              backgroundColor:
+                                this.state.colors[
+                                  this.state.currentchosenScale.indexOf(string)
+                                ],
+                              fontSize: "17px",
+                              fontWeight: "700",
+                            }}
+                            className={"positionfret " + string}
+                          >
+                            {parseInt(
+                              this.state.currentchosenScale.indexOf(string) + 1
+                            ) + string}
+                          </div>
+                          <div className="fretline"></div>
                         </div>
-                        <div className="fretline"></div>
-                      </div>
-                    );
-                  } else {
-                    return (
-                      <div className={"fret"}>
-                        <div
-                          style={{
-                            backgroundColor: "white",
-                            fontSize: "20px",
-                            fontWeight: "500",
-                          }}
-                          className={"positionfret " + string}
-                        >
-                          {string}
+                      );
+                    } else {
+                      return (
+                        <div className={"fret"}>
+                          <div
+                            style={{
+                              backgroundColor: "white",
+                              fontSize: "20px",
+                              fontWeight: "500",
+                            }}
+                            className={"positionfret " + string}
+                          >
+                            {string}
+                          </div>
+                          <div className="fretline"></div>
                         </div>
-                        <div className="fretline"></div>
-                      </div>
-                    );
-                  }
-                })}
+                      );
+                    }
+                  })}
               </div>
             );
           })}

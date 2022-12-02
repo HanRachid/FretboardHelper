@@ -55,7 +55,7 @@
 }
 
 .fret {
-  outline: 1px solid rgb(173, 170, 170);
+  outline: 1px solid rgb(125, 129, 82);
   width: 55px;
   height: 45px;
   display: flex;
@@ -69,7 +69,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  outline: 1px solid rgb(102, 101, 101);
+  outline: 1px solid rgb(77, 40, 40);
   border-radius: 25px;
   width: 36px;
   height: 36px;
