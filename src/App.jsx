@@ -259,12 +259,14 @@ export default class App extends Component {
                               this.state.colors[
                                 this.state.currentchosenScale.indexOf(string)
                               ],
-                            fontSize: "20px",
-                            fontWeight: "500",
+                            fontSize: "17px",
+                            fontWeight: "700",
                           }}
                           className={"positionfret " + string}
                         >
-                          {string}
+                          {parseInt(
+                            this.state.currentchosenScale.indexOf(string) + 1
+                          ) + string}
                         </div>
                         <div className="fretline"></div>
                       </div>
